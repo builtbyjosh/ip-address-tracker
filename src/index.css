@@ -15,3 +15,14 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+.leaflet-control {
+  z-index: 0 !important;
+}
+.leaflet-pane {
+  z-index: 0 !important;
+}
+.leaflet-top,
+.leaflet-bottom {
+  z-index: 0 !important;
+}

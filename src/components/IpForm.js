@@ -9,11 +9,11 @@ const IpForm = ({ mapData, setipAddress }) => {
   };
   return (
     <form onSubmit={handleSubmit}>
-      <div className="relative mx-auto w-1/2 my-5">
+      <div className="relative mx-auto sm:w-full lg:w-1/2 my-5">
         <input
           type="search"
           name="search"
-          className="block p-2.5 w-full z-20 text-sm text-gray-900 bg-gray-50 rounded-xl border-l-gray-100 border-l-2 border border-gray-300 "
+          className="block p-2.5 w-full z-20 text-sm text-gray-900 bg-gray-50 rounded-xl focus:outline-none"
           defaultValue={mapData.ip}
           required
         />

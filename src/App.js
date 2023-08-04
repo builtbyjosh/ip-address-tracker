@@ -2,7 +2,7 @@ import { useState, useEffect, useRef } from "react";
 import axios from "axios";
 import "./App.css";
 import patternDesktop from "./images/pattern-bg-desktop.png";
-// import mobileDesktop from "./images/pattern-bg-mobile.png";
+import patternMobile from "./images/pattern-bg-mobile.png";
 
 import InfoBar from "./components/InfoBar";
 import Map from "./components/Map";
@@ -53,17 +53,26 @@ function App() {
 
   return (
     <div className="App relative">
-      <img src={patternDesktop} alt="Pattern Desktop" className="w-full" />
-
-      <div className="fixed top-0 left-0 w-full h-full flex  justify-center z-50">
+      {/* Show patternDesktop on desktop views */}
+      <img
+        src={patternDesktop}
+        alt="Pattern Desktop"
+        className="w-full hidden md:block"
+      />
+      {/* Show patternMobile on mobile views */}
+      <img
+        src={patternMobile}
+        alt="Pattern Mobile"
+        className="w-full block md:hidden"
+      />{" "}
+      <Map mapData={mapData} mapRef={mapRef} />
+      <div className="absolute top-0 left-0 w-full h-full flex  justify-center z-50">
         <div className="mt-5 ">
           <p className="text-white text-2xl font-bold">IP Address Tracker</p>
-
           <IpForm mapData={mapData} setipAddress={setipAddress} />
           <InfoBar mapData={mapData} />
         </div>
       </div>
-      <Map mapData={mapData} mapRef={mapRef} />
     </div>
   );
 }
